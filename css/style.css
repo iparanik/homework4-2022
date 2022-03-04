@@ -1,0 +1,124 @@
+body{
+  font-family: "Poppins",serif;
+  background-image: url(../images/concrete_seamless.png);
+  background-color: #f1f1f1;
+}
+header{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-items: center;
+}
+.nav_links{
+  display: flex;
+  flex-direction: column;
+}
+.nav_item:visted{
+  color: #50C7C7;
+  text-decoration: underline;
+  -webkit-text-decoration-style: dotted;
+          text-decoration-style: dotted;
+}
+
+.card > header{
+  background-color: #288088;
+  border: #45ADAD 2px solid;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+}
+
+.card{
+  flex-basis: 450px;
+
+}
+
+.pricing{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.gallery img{
+  border: #50C7C7 10px solid;
+  margin: 10px;
+  width: 300px;
+  display: flex;
+}
+
+.gallery{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@keyframes mymove{
+  from {width:25px; opacity: 0;}
+  to { width:475px; opacity: 1;}
+}
+
+#logo{
+  animation-name: mymove;
+  animation-duration: 5s;
+}
+
+@media screen and (min-width: 900px) {
+  header{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .nav_links{
+    flex-direction: row;
+  }
+  .card{
+    flex-basis: 250px;
+  }
+  body > header{
+    position: sticky;
+  }
+}
+
+
+@media print{
+  body{
+    background-image: none;
+  }
+  header{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  nav{
+    width: 100px;
+  }
+  .nav_links{
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .pricing{
+    display:flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+  }
+  .card{
+      border: #45ADDD 2px solid;
+      flex-basis: 325px;
+  }
+  #gallery, .gallery{
+      display: none;
+  }
+  .card li:nth-child(2):after{
+      content: '\1F44D';
+    }
+}
+
+@media screen and (prefers-reduced-motion: reduce){
+  #logo{
+    animation: none;
+  }
+}
